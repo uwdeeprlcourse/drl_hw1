@@ -36,7 +36,7 @@ $ source activate hw1-env
 
 - Download MuJoCo binaries from the official [website](http://www.mujoco.org/) and obtain the mujoco class license key from canvas (talk to instructors to obtain this if you don't have canvas access).
 - Unzip the downloaded mjpro150 directory into `~/.mujoco/mjpro150`, and place your license key (mjkey.txt) at `~/.mujoco/mjkey.txt`
-- Update `bashrc` by adding the following lines and source it
+- Update `~/.bash_profile` by adding the following lines and source it
 ```
 export LD_LIBRARY_PATH="path_to_.mujoco/mjpro150/bin:$LD_LIBRARY_PATH"
 ```
