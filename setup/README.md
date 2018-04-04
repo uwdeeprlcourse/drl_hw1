@@ -44,7 +44,7 @@ export LD_LIBRARY_PATH="path_to_.mujoco/mjpro150/bin:$LD_LIBRARY_PATH"
 ```
 $ conda update conda
 $ cd path/to/drl_hw1
-$ conda env create -f setup/linux.yml
+$ conda env create -f setup/mac.yml
 ```
 - Add the directory to pythonpath. Change `~/.bash_profile` and append:
 ```
