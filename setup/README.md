@@ -60,7 +60,7 @@ $ source activate hw1-env
 
 We recommend using Windows Subsystem for Linux: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
-This gives you a Linux environment within Windows without the overhead of a Virtual Machine. In addition, you will need a X-Windows Server. https://sourceforge.net/projects/xming/ XMing is one option if you don't already have one.
+This gives you a Linux environment within Windows without the overhead of a Virtual Machine. In addition, you will need a X-Windows Server. https://sourceforge.net/projects/vcxsrv/ VcXsrv is one option if you don't already have one; if you use this you'll have to configure it to not use it's native OpenGL.
 
 You can then start up the Bash prompt through WSL (Start menu -> Ubuntu), and follow the linux instructions above.
 
