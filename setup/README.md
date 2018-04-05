@@ -58,7 +58,19 @@ $ source activate hw1-env
 
 ## Windows
 
-Talk to Kendall
+We recommend using Windows Subsystem for Linux: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
+This gives you a Linux environment within Windows without the overhead of a Virtual Machine. In addition, you will need a X-Windows Server. https://sourceforge.net/projects/xming/ XMing is one option if you don't already have one.
+
+You can then start up the Bash prompt through WSL (Start menu -> Ubuntu), and follow the linux instructions above.
+
+When you are testing, you will have to set the DISPLAY env variable:
+
+```
+$ export DISPLAY=:0.0
+```
+
+This variable can also be set in your .bashrc if you'd like.
 
 ## Known Issues
 
