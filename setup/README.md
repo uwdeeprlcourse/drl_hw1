@@ -2,6 +2,8 @@
 
 A short guide to install this package is below. The package relies on `mujoco-py` which might be the trickiest part of the installation. See `known issues` below and also instructions from the mujoco-py [page](https://github.com/openai/mujoco-py) if you are stuck with mujoco-py installation.
 
+*Use absolute paths everywhere.*
+
 ## Linux
 
 - Download MuJoCo binaries from the official [website](http://www.mujoco.org/) and obtain the mujoco class license key from canvas (talk to instructors to obtain this if you don't have canvas access).
@@ -10,21 +12,21 @@ A short guide to install this package is below. The package relies on `mujoco-py
 ```
 $ sudo apt-get install libgl1-mesa-dev libgl1-mesa-glx libglew-dev libosmesa6-dev build-essential libglfw3
 ```
-- Update `bashrc` by adding the following lines and source it
+- Update `~/.bashrc` by adding the following paths and source it. *Please use the correct username and use absolute paths like in the below examples.*
 ```
-export LD_LIBRARY_PATH="path_to_.mujoco/mjpro150/bin:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/aravind/.mujoco/mjpro150/bin:$LD_LIBRARY_PATH"
 export MUJOCO_PY_FORCE_CPU=True
 alias MJPL='LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so:/usr/lib/nvidia-384/libGL.so'
 ```
 - Install this package using
 ```
 $ conda update conda
-$ cd path/to/drl_hw1
+$ cd <path/to/drl_hw1>
 $ conda env create -f setup/linux.yml
 ```
 - Add the directory to pythonpath. Change `~/.bashrc` and append:
 ```
-export PYTHONPATH="/path/to/drl_hw1:$PYTHONPATH"
+export PYTHONPATH="</path/to/drl_hw1>:$PYTHONPATH"
 ```
 - Source the bash so that all paths are correctly configured
 ```
@@ -36,9 +38,10 @@ $ source activate hw1-env
 
 - Download MuJoCo binaries from the official [website](http://www.mujoco.org/) and obtain the mujoco class license key from canvas (talk to instructors to obtain this if you don't have canvas access).
 - Unzip the downloaded mjpro150 directory into `~/.mujoco/mjpro150`, and place your license key (mjkey.txt) at `~/.mujoco/mjkey.txt`
-- Update `~/.bash_profile` by adding the following lines and source it
+- Update `~/.bash_profile` by adding the following paths and source it. *Please use the correct username and use absolute paths like in the below examples.*
 ```
-export LD_LIBRARY_PATH="path_to_.mujoco/mjpro150/bin:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="Users/aravind/.mujoco/mjpro150/bin:$LD_LIBRARY_PATH"
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/aravind/.mujoco/mjpro150/bin
 ```
 - Install this package using
 ```
@@ -46,9 +49,9 @@ $ conda update conda
 $ cd path/to/drl_hw1
 $ conda env create -f setup/mac.yml
 ```
-- Add the directory to pythonpath. Change `~/.bash_profile` and append:
+- Add the directory to pythonpath. Change `~/.bash_profile` and append (*again, please use the full correct path*):
 ```
-export PYTHONPATH="/path/to/drl_hw1:$PYTHONPATH"
+export PYTHONPATH="</path/to/drl_hw1>:$PYTHONPATH"
 ```
 - Source the bash so that all paths are correctly configured
 ```
