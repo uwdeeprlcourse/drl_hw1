@@ -20,10 +20,6 @@ class GLP:
         self.m = env_spec.action_dim  # number of actions
         self.min_log_std = min_log_std
 
-        # Initialize variables
-        # ------------------------
-        self.d = self.m * self.n + self.m + self.m  # total number of params
-
         # Set seed
         # ------------------------
         if seed is not None:
@@ -54,6 +50,7 @@ class GLP:
         self.log_std_val = np.float64(self.log_std.data.numpy().ravel())
         self.param_shapes = [p.data.numpy().shape for p in self.trainable_params]
         self.param_sizes = [p.data.numpy().size for p in self.trainable_params]
+        self.d = np.sum(self.param_sizes)  # total number of params
 
         # Placeholders
         # ------------------------
