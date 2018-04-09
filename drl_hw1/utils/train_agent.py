@@ -52,6 +52,8 @@ def train_agent(job_name, agent,
             eval_paths = sample_paths_parallel(N=10, policy=agent.policy, num_cpu=num_cpu,
                                                env_name=e.env_id, mode='evaluation')
             mean_pol_perf = np.mean([np.sum(path['rewards']) for path in eval_paths])
+            if agent.save_logs:
+                agent.logger.log_kv('eval_score', mean_pol_perf)
         if i % save_freq == 0 and i > 0:
             if agent.save_logs:
                 agent.logger.save_log('logs/')
