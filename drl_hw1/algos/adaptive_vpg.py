@@ -88,17 +88,6 @@ class AdaptiveVPG(BatchREINFORCE):
 
         return base_stats
 
-    def log_rollout_statistics(self, paths):
-        path_returns = [sum(p["rewards"]) for p in paths]
-        mean_return = np.mean(path_returns)
-        std_return = np.std(path_returns)
-        min_return = np.amin(path_returns)
-        max_return = np.amax(path_returns)
-        self.logger.log_kv('stoc_pol_mean', mean_return)
-        self.logger.log_kv('stoc_pol_std', std_return)
-        self.logger.log_kv('stoc_pol_max', max_return)
-        self.logger.log_kv('stoc_pol_min', min_return)
-
     def simple_gradient_update(self, curr_params, search_direction, step_size,
                                observations, actions, advantages):
         # This function takes in the current parameters, a search direction, and a step size
