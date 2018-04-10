@@ -135,6 +135,7 @@ class BatchREINFORCE:
         vpg_grad = self.flat_vpg(observations, actions, advantages)
         new_params, new_surr, kl_dist = self.simple_gradient_update(curr_params, vpg_grad, self.alpha,
                                         observations, actions, advantages)
+        self.policy.set_param_values(new_params, set_new=True, set_old=True)
         surr_improvement = new_surr - surr_before
         t_opt += timer.time() - ts
 
